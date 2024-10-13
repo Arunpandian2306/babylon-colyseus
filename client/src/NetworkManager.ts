@@ -11,18 +11,15 @@ export class NetworkManager {
     client.joinOrCreate("my_room").then(room => {
       this.room = room;
 
-      // Listen for shape creation and movement updates
+
       room.onMessage("createShape", (shape) => {
-        // Handle shape creation on the client
       });
 
       room.onMessage("moveShape", (data) => {
-        // Handle shape movement on the client
       });
     });
   }
 
-  // Send shape creation and movement events to the server
   createShape(shape: any) {
     this.room.send("createShape", shape);
   }
